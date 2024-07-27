@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Инициализация счётчиков
+file_count=0
+dir_count=0
+
+# Цикл for для перебора всех элементов в текущей директории
+for item in *; do
+  if [ -f "$item" ]; then
+    ((file_count++))
+  elif [ -d "$item" ]; then
+    ((dir_count++))
+  fi
+done
+
+# Вывод результатов
+echo "Количество файлов: $file_count"
+echo "Количество директорий: $dir_count"
